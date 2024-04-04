@@ -1,0 +1,68 @@
+#hero img{
+  height: 250px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+#hero h1{
+  color: #00224D;
+}
+
+#hero p{
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#internships > h2{
+  color: #00224D;
+  text-align: center;
+}
+
+#internships > .container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px
+}
+
+#internships > .container > img{
+  align-self: center;
+}
+
+
+#internships > .container > .internship-info{
+  align-self: flex-end;
+}
+
+#skills > h2{
+  color: #00224D;
+  text-align: center;
+}
+
+#skills > .container{
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: repeat(auto, auto);
+  gap: 30px;
+  justify-content: center;
+}
+
+#skills > .container > .skill-pic > img{
+  object-fit: cover;
+  width: 100%;
+  max-height: 90%;
+}
+
+#skills > .container > .skill-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#skills > .container > .skill-info > h3{
+  align-self: center;
+}
+
