@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR code generator</title>
+  </head>
+
+  <body>
+    <h1>QR Generator</h1>
+    <form action="/check" method="POST">
+      <label for="url">Enter a url:</label>
+      <input type="text" id="url" name="url" required />
+      <label for="file_name">Give a name to the QR:</label>
+      <input type="text" id="file_name" name="file_name" required />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

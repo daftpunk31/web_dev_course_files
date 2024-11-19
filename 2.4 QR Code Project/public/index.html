@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+</head>
+<body>
+  <form id="urlForm" action="/check" method="POST" enctype="application/x-www-form-urlencoded">
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url" required>
+    <label for="file_name">File Name:</label>
+    <input type="text" id="file_name" name="file_name" required>
+    <button type="submit">Generate</button>
+  </form>
+
+  <script>
+    document.getElementById('urlForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const formData = new URLSearchParams(new FormData(this)).toString();
+      fetch('/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        const linkTxt = document.createElement('a');
+        linkTxt.href = data.txt;
+        linkTxt.download = '';
+        linkTxt.click();
+
+        const linkPng = document.createElement('a');
+        linkPng.href = data.png;
+        linkPng.download = '';
+        linkPng.click();
+      })
+      .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
