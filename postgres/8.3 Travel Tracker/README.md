@@ -1,0 +1,1 @@
+Just a travel tracker web app that uses PostgreSQL to store data and Node.js to handle requests. The app allows users to add all the countries they have travelled to.
